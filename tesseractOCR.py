@@ -6,7 +6,7 @@
 # description: 
 #   - Runs tesseract OCR and
 #   - Output json file for CUTIE
-# date: 02/13/2020
+# date: 02/13/2021
 
 from PIL import Image
 import pytesseract
