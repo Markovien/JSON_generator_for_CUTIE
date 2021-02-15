@@ -16,10 +16,11 @@ import sys, os, cv2, json
 from os.path import split, splitext
 
 BASE_PATH = os.getcwd()
-INPUT_FOLDER = os.path.join(BASE_PATH, "data/img/")
-TMP_FOLDER = os.path.join(BASE_PATH, "data/img_processed/")
-OUTPUT_FOLDER = os.path.join(BASE_PATH, "data/json/")
+INPUT_FOLDER = os.path.join(BASE_PATH, "data/img/") #folder where are stored images
+TMP_FOLDER = os.path.join(BASE_PATH, "data/img_processed/") #folder where to store processed images
+OUTPUT_FOLDER = os.path.join(BASE_PATH, "data/json/") #folder where to store json files
 
+#these are for coloring printing texts
 ORANGE = '\033[33m'
 RESET = '\033[0m'
 
@@ -139,7 +140,7 @@ def main():
             new_doc = {}
             new_doc.update({'text_boxes':doc})
     
-            classes = ['TOTAL', 'TOTAL_DUE', 'DUE', 'TTC', 'TOTAL_AMOUNT']
+            classes = ['O', 'DATE_SALE', 'ADDRESS_SELLER', 'DOC_NR', 'DATE_CREATION', 'ADDRESS_CONTRACTOR', 'VAT_ID_CONTRACTOR', 'PAYMENT_METHOD', 'VAT_ID_SELLER', 'PAYMENT_BANK_NR', 'TOTAL_PAY', 'TOTAL_CURRENCY', 'TOTAL_TAX', 'TOTAL_WITH_TAX', 'TOTAL_WITHOUT_TAX', 'DATE_PAYMENT', 'NAME_SELLER', 'NAME_CONTRACTOR']
             fields = []
             for cl in classes:
                 new_field = {"field_name": cl, "value_id": [], "value_text":[], "key_id":[], "key_text":[]}
